@@ -1,41 +1,43 @@
 <html>
 <head>
-  <title>Mis mapas M2B</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="autor" />
-  <meta name="description" content="descripción página">
-  <meta name="robots" content="index,follow">
+    <meta charset='utf-8' />
+    <title>Mapbox básico</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%
+        }
+    </style>
+    <script>
+        //Añadir vuestor token y vuestro estilo
+        function init() {
+            mapboxgl.accessToken =
+                'pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2plZHhubTQxMTNoYzMza3Rqa3kxYTdrOCJ9.53B1E6mKD_EQOVb2Y0-SsA';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/outdoors-v11',
+                center: [2.16859, 41.3954],
+                zoom: 13,
+                attributionControl: false
+            });
+
+        }
+    </script>
 </head>
-<body>
-  <h2>Mis mapas del módulo M2B</h2>
-  <h4>Leaflet</h4>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-  <hr />
-  <h4>MapBoxGL JS</h4>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-  <hr />
-  <h4>KeplerGL</h4>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-  <hr />
-  <h4>Prácticas</h4>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-  <hr />
+
+<body onload="init()">
+    <div id="map"></div>
 </body>
-</html>
+
+</html>  
+
